@@ -92,11 +92,17 @@
           }
         },
         "url": {
-          "raw": "{{BASE_URL}}/login",
+          "raw": "http://64.227.160.186:9000/v1/login",
+          "protocol": "http",
           "host": [
-            "{{BASE_URL}}"
+            "64",
+            "227",
+            "160",
+            "186"
           ],
+          "port": "9000",
           "path": [
+            "v1",
             "login"
           ]
         },
@@ -239,15 +245,21 @@
         "header": [
           {
             "key": "Authorization",
-            "value": "{{fd_token}}"
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
           }
         ],
         "url": {
-          "raw": "{{BASE_URL}}/userdetails",
+          "raw": "http://64.227.160.186:9000/v1/userdetails",
+          "protocol": "http",
           "host": [
-            "{{BASE_URL}}"
+            "64",
+            "227",
+            "160",
+            "186"
           ],
+          "port": "9000",
           "path": [
+            "v1",
             "userdetails"
           ]
         },
@@ -287,7 +299,7 @@
           },
           {
             "key": "Authorization",
-            "value": "{{fd_token}}"
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
           },
           {
             "key": "Content-Type",
@@ -295,11 +307,17 @@
           }
         ],
         "url": {
-          "raw": "{{BASE_URL}}/master",
+          "raw": "http://64.227.160.186:9000/v1/master",
+          "protocol": "http",
           "host": [
-            "{{BASE_URL}}"
+            "64",
+            "227",
+            "160",
+            "186"
           ],
+          "port": "9000",
           "path": [
+            "v1",
             "master"
           ]
         },
@@ -343,15 +361,21 @@
           },
           {
             "key": "Authorization",
-            "value": "{{fd_token}}"
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
           }
         ],
         "url": {
-          "raw": "{{BASE_URL}}/dashboard/count",
+          "raw": "http://64.227.160.186:9000/v1/dashboard/count",
+          "protocol": "http",
           "host": [
-            "{{BASE_URL}}"
+            "64",
+            "227",
+            "160",
+            "186"
           ],
+          "port": "9000",
           "path": [
+            "v1",
             "dashboard",
             "count"
           ]
@@ -412,7 +436,7 @@
           },
           {
             "key": "Authorization",
-            "value": "{{fd_token}}"
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
           },
           {
             "key": "Content-Type",
@@ -429,11 +453,17 @@
           }
         },
         "url": {
-          "raw": "{{BASE_URL}}/job/create",
+          "raw": "http://64.227.160.186:9000/v1/job/create",
+          "protocol": "http",
           "host": [
-            "{{BASE_URL}}"
+            "64",
+            "227",
+            "160",
+            "186"
           ],
+          "port": "9000",
           "path": [
+            "v1",
             "job",
             "create"
           ]
@@ -479,15 +509,21 @@
           },
           {
             "key": "Authorization",
-            "value": "{{fd_token}}"
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
           }
         ],
         "url": {
-          "raw": "{{BASE_URL}}/dashboard/count",
+          "raw": "http://64.227.160.186:9000/v1/dashboard/count",
+          "protocol": "http",
           "host": [
-            "{{BASE_URL}}"
+            "64",
+            "227",
+            "160",
+            "186"
           ],
+          "port": "9000",
           "path": [
+            "v1",
             "dashboard",
             "count"
           ]
@@ -522,7 +558,7 @@
           },
           {
             "key": "Authorization",
-            "value": "{{fd_token}}"
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
           },
           {
             "key": "Content-Type",
@@ -539,11 +575,17 @@
           }
         },
         "url": {
-          "raw": "{{BASE_URL}}/dashboard/details",
+          "raw": "http://64.227.160.186:9000/v1/dashboard/details",
+          "protocol": "http",
           "host": [
-            "{{BASE_URL}}"
+            "64",
+            "227",
+            "160",
+            "186"
           ],
+          "port": "9000",
           "path": [
+            "v1",
             "dashboard",
             "details"
           ]
@@ -582,7 +624,7 @@
           },
           {
             "key": "Authorization",
-            "value": "{{fd_token}}"
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
           },
           {
             "key": "Content-Type",
@@ -599,11 +641,17 @@
           }
         },
         "url": {
-          "raw": "{{BASE_URL}}/job/search",
+          "raw": "http://64.227.160.186:9000/v1/job/search",
+          "protocol": "http",
           "host": [
-            "{{BASE_URL}}"
+            "64",
+            "227",
+            "160",
+            "186"
           ],
+          "port": "9000",
           "path": [
+            "v1",
             "job",
             "search"
           ]
@@ -642,15 +690,21 @@
           },
           {
             "key": "Authorization",
-            "value": "{{fd_token}}"
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
           }
         ],
         "url": {
-          "raw": "{{BASE_URL}}/job/details/{{job_number}}",
+          "raw": "http://64.227.160.186:9000/v1/job/details/{{job_number}}",
+          "protocol": "http",
           "host": [
-            "{{BASE_URL}}"
+            "64",
+            "227",
+            "160",
+            "186"
           ],
+          "port": "9000",
           "path": [
+            "v1",
             "job",
             "details",
             "{{job_number}}"
