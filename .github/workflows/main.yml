@@ -26,6 +26,7 @@ jobs:
        run: 
            npm install -g newman
            npm install -g newman-reporter-htmlextra
+           
      - name: Run Collection
        run: 
            newman run 'Learning Collection.postman_collection.json' \
