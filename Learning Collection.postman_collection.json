@@ -14,7 +14,7 @@
           "listen": "prerequest",
           "script": {
             "exec": [
-              " pm.variables.set(\"username\",\"iamfd\")\r",
+              "pm.variables.set(\"username\",\"iamfd\")\r",
               "pm.variables.set(\"password\",\"password\")\r",
               "\r",
               "pm.collectionVariables.set(\"\",\"\")\r",
@@ -92,17 +92,11 @@
           }
         },
         "url": {
-          "raw": "http://64.227.160.186:9000/v1/login",
-          "protocol": "http",
+          "raw": "{{BASE_URL}}/login",
           "host": [
-            "64",
-            "227",
-            "160",
-            "186"
+            "{{BASE_URL}}"
           ],
-          "port": "9000",
           "path": [
-            "v1",
             "login"
           ]
         },
@@ -245,21 +239,15 @@
         "header": [
           {
             "key": "Authorization",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
+            "value": "{{fd_token}}"
           }
         ],
         "url": {
-          "raw": "http://64.227.160.186:9000/v1/userdetails",
-          "protocol": "http",
+          "raw": "{{BASE_URL}}/userdetails",
           "host": [
-            "64",
-            "227",
-            "160",
-            "186"
+            "{{BASE_URL}}"
           ],
-          "port": "9000",
           "path": [
-            "v1",
             "userdetails"
           ]
         },
@@ -269,6 +257,27 @@
     },
     {
       "name": "MasterAPI",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "console.log(\"Test scripts for Master API\")\r",
+              "\r",
+              "pm.test(\"Verify Status Code is 200\", function (){\r",
+              "    pm.response.to.have.status(200)\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Verify Message Success in the Response Body\", function (){\r",
+              "    pm.expect(pm.response.json().message).to.be.eqls(\"Success\")\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "method": "POST",
         "header": [
@@ -278,7 +287,7 @@
           },
           {
             "key": "Authorization",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
+            "value": "{{fd_token}}"
           },
           {
             "key": "Content-Type",
@@ -286,21 +295,68 @@
           }
         ],
         "url": {
-          "raw": "http://64.227.160.186:9000/v1/master",
-          "protocol": "http",
+          "raw": "{{BASE_URL}}/master",
           "host": [
-            "64",
-            "227",
-            "160",
-            "186"
+            "{{BASE_URL}}"
           ],
-          "port": "9000",
           "path": [
-            "v1",
             "master"
           ]
         },
         "description": "Generated from cURL: curl 'http://64.227.160.186:9000/v1/master' \\\r\n  -X 'POST' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: en-US,en;q=0.9' \\\r\n  -H 'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzM4NDY5NDB9.LiygD08AXrOXjmTS3E-rBJ1EZCqHK3qyY6NR3yl3lnc' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Length: 0' \\\r\n  -H 'Content-Type: text/plain' \\\r\n  -H 'Origin: http://phoenix.techwithjatin.com' \\\r\n  -H 'Referer: http://phoenix.techwithjatin.com/' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36' \\\r\n  --insecure"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Count Before",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "console.log(\"Checking id count for jobs created today is greater than older value\")\r",
+              "\r",
+              "pm.test(\"Verify Status Code is 200\", function (){\r",
+              "    pm.response.to.have.status(200)\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Verify if the count for jobs created today is incremented\", function (){\r",
+              "    let responsebody = pm.response.json();\r",
+              "    let newCountValue = responsebody.data[1].count\r",
+              "    pm.collectionVariables.set(\"createdTodayCount\",newCountValue)\r",
+              "})\r",
+              "\r",
+              "console.log(\"Old count is: \"+newCountValue)"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{fd_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{BASE_URL}}/dashboard/count",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "dashboard",
+            "count"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://64.227.160.186:9000/v1/dashboard/count' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: en-US,en;q=0.9' \\\r\n  -H 'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzM4NDY5NDB9.LiygD08AXrOXjmTS3E-rBJ1EZCqHK3qyY6NR3yl3lnc' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'If-None-Match: W/\"f3-AkwPcn5oZqzPQ2zg4G3/5C3SrjU\"' \\\r\n  -H 'Origin: http://phoenix.techwithjatin.com' \\\r\n  -H 'Referer: http://phoenix.techwithjatin.com/' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36' \\\r\n  --insecure"
       },
       "response": []
     },
@@ -320,6 +376,31 @@
             "packages": {},
             "requests": {}
           }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Fetch job number from the response and store it in a collection variable\r",
+              "\r",
+              "var jobNumber = pm.response.json().data.job_number\r",
+              "\r",
+              "console.log(\"Job Number is: \"+jobNumber)\r",
+              "\r",
+              "pm.collectionVariables.set(\"job_number\",jobNumber)\r",
+              "\r",
+              "pm.test(\"Verify Status Code is 200\", function (){\r",
+              "    pm.response.to.have.status(200)\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Verify Message Success in the Response Body\", function (){\r",
+              "    pm.expect(pm.response.json().message).to.be.eqls(\"Job created successfully. \")\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
         }
       ],
       "request": {
@@ -331,7 +412,7 @@
           },
           {
             "key": "Authorization",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
+            "value": "{{fd_token}}"
           },
           {
             "key": "Content-Type",
@@ -348,17 +429,11 @@
           }
         },
         "url": {
-          "raw": "http://64.227.160.186:9000/v1/job/create",
-          "protocol": "http",
+          "raw": "{{BASE_URL}}/job/create",
           "host": [
-            "64",
-            "227",
-            "160",
-            "186"
+            "{{BASE_URL}}"
           ],
-          "port": "9000",
           "path": [
-            "v1",
             "job",
             "create"
           ]
@@ -376,12 +451,18 @@
             "exec": [
               "console.log(\"Checking id count for jobs created today is greater than older value\")\r",
               "\r",
+              "pm.test(\"Verify Status Code is 200\", function (){\r",
+              "    pm.response.to.have.status(200)\r",
+              "})\r",
+              "\r",
               "pm.test(\"Verify if the count for jobs created today is incremented\", function (){\r",
               "    let responsebody = pm.response.json();\r",
               "    let newCountValue = responsebody.data[1].count\r",
               "    let oldCountValue = pm.collectionVariables.get(\"createdTodayCount\")\r",
               "    pm.expect(newCountValue).to.be.greaterThan(oldCountValue)\r",
-              "})"
+              "})\r",
+              "\r",
+              "console.log(\"New count is: \"+newCountValue)"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -398,21 +479,15 @@
           },
           {
             "key": "Authorization",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
+            "value": "{{fd_token}}"
           }
         ],
         "url": {
-          "raw": "http://64.227.160.186:9000/v1/dashboard/count",
-          "protocol": "http",
+          "raw": "{{BASE_URL}}/dashboard/count",
           "host": [
-            "64",
-            "227",
-            "160",
-            "186"
+            "{{BASE_URL}}"
           ],
-          "port": "9000",
           "path": [
-            "v1",
             "dashboard",
             "count"
           ]
@@ -423,6 +498,21 @@
     },
     {
       "name": "Job Details",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Verify Status Code is 200\", function (){\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "method": "POST",
         "header": [
@@ -432,7 +522,7 @@
           },
           {
             "key": "Authorization",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
+            "value": "{{fd_token}}"
           },
           {
             "key": "Content-Type",
@@ -449,17 +539,11 @@
           }
         },
         "url": {
-          "raw": "http://64.227.160.186:9000/v1/dashboard/details",
-          "protocol": "http",
+          "raw": "{{BASE_URL}}/dashboard/details",
           "host": [
-            "64",
-            "227",
-            "160",
-            "186"
+            "{{BASE_URL}}"
           ],
-          "port": "9000",
           "path": [
-            "v1",
             "dashboard",
             "details"
           ]
@@ -470,6 +554,25 @@
     },
     {
       "name": "Job Search",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Verify Status Code is 200\", function (){\r",
+              "    pm.response.to.have.status(200)\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Verify Message Success in the Response Body\", function (){\r",
+              "    pm.expect(pm.response.json().message).to.be.eqls(\"Success\")\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "method": "POST",
         "header": [
@@ -479,7 +582,7 @@
           },
           {
             "key": "Authorization",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
+            "value": "{{fd_token}}"
           },
           {
             "key": "Content-Type",
@@ -488,7 +591,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\"searchText\":\"JOB_229637\"}",
+          "raw": "{\"searchText\":\"{{job_number}}\"}",
           "options": {
             "raw": {
               "language": "json"
@@ -496,17 +599,11 @@
           }
         },
         "url": {
-          "raw": "http://64.227.160.186:9000/v1/job/search",
-          "protocol": "http",
+          "raw": "{{BASE_URL}}/job/search",
           "host": [
-            "64",
-            "227",
-            "160",
-            "186"
+            "{{BASE_URL}}"
           ],
-          "port": "9000",
           "path": [
-            "v1",
             "job",
             "search"
           ]
@@ -517,6 +614,25 @@
     },
     {
       "name": "Job Detail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Verify Status Code is 200\", function (){\r",
+              "    pm.response.to.have.status(200)\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Verify Message Success in the Response Body\", function (){\r",
+              "    pm.expect(pm.response.json().message).to.be.eqls(\"Success\")\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "method": "POST",
         "header": [
@@ -526,24 +642,18 @@
           },
           {
             "key": "Authorization",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzQ4NDY0NDB9.Uco0ainOsFcviOcu96bhnO07TALnnEyhkeVI8QifrvA"
+            "value": "{{fd_token}}"
           }
         ],
         "url": {
-          "raw": "http://64.227.160.186:9000/v1/job/details/JOB_229637",
-          "protocol": "http",
+          "raw": "{{BASE_URL}}/job/details/{{job_number}}",
           "host": [
-            "64",
-            "227",
-            "160",
-            "186"
+            "{{BASE_URL}}"
           ],
-          "port": "9000",
           "path": [
-            "v1",
             "job",
             "details",
-            "JOB_229637"
+            "{{job_number}}"
           ]
         },
         "description": "Generated from cURL: curl 'http://64.227.160.186:9000/v1/job/details/JOB_219973' \\\r\n  -X 'POST' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: en-US,en;q=0.9' \\\r\n  -H 'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3NzM4NDY5NDB9.LiygD08AXrOXjmTS3E-rBJ1EZCqHK3qyY6NR3yl3lnc' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Length: 0' \\\r\n  -H 'Content-Type: text/plain' \\\r\n  -H 'Origin: http://phoenix.techwithjatin.com' \\\r\n  -H 'Referer: http://phoenix.techwithjatin.com/' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36' \\\r\n  --insecure"
@@ -581,6 +691,24 @@
     },
     {
       "key": "fd_token",
+      "value": ""
+    },
+    {
+      "key": "imeiNumber",
+      "value": ""
+    },
+    {
+      "key": "job_number",
+      "value": ""
+    },
+    {
+      "value": ""
+    },
+    {
+      "key": "createdTodayCount",
+      "value": ""
+    },
+    {
       "value": ""
     }
   ]
