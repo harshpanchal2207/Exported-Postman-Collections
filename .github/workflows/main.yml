@@ -30,7 +30,6 @@ jobs:
      - name: Run Collection
        run: 
            newman run 'Learning Collection.postman_collection.json' \
-           -e QA.postman_environment.json \
            -r cli,htmlextra
 
      - name: Newman Report
